@@ -29,7 +29,11 @@ def load_json(file_path: str) -> Optional[Dict]:
     return None
 
 
-def find_differences(old_data: Dict, new_data: Dict, diff_keys: List[str]) -> Dict:
+def find_differences(
+        old_data: Dict,
+        new_data: Dict,
+        diff_keys: List[str]
+) -> Dict:
     """
     Находит различия между двумя структурами данных.
 
@@ -46,12 +50,19 @@ def find_differences(old_data: Dict, new_data: Dict, diff_keys: List[str]) -> Di
     Если значение ключа в old_data не равно значению ключа в new_data, оно добавляется в результирующий словарь.
     """
 
+    # Инициализация пустого словаря для хранения результатов
     result = {}
 
+    # Проход по каждому ключу из списка diff_keys
     for key in diff_keys:
+
+        # Проверка наличия ключа в структурах данных old_data и new_data
         if key in old_data.get("data") and key in new_data.get("data"):
+            # Сравнение значений ключей old_data['data'][key] и new_data['data'][key]
             if old_data.get("data").get(key) != new_data.get("data").get(key):
+                # Присвоение нового значения ключу result[key]
                 result[key] = new_data.get("data").get(key)
+
     return result
 
 
