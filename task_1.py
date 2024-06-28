@@ -62,13 +62,12 @@ if __name__ == "__main__":
 
     # Тест 3: Некорректный ключ (с большой буквы)
     test_text_3 = """
-        {Name}, ваша запись изменена:
-        ⌚️ {day_month} в {start_time}
-        👩 {master}
-        Услуги:
-        {services}
-        управление записью {record_link}
-        """
+    {Name}, ваша запись изменена:
+    ⌚️ {day_month} в {start_time}
+    👩 {master}
+    Услуги:
+    {services}
+    """
     result_3 = verify_text(test_text_3, valid_keys)
     assert result_3 == "Ошибка: Некорректный ключ 'Name'", f"Failed Test 3: {result_3}"
 
@@ -85,12 +84,12 @@ if __name__ == "__main__":
 
     # Тест 5: Некорректный ключ
     test_text_5 = """
-        {nme}, ваша запись изменена:
-        ⌚️ {day_month} в {start_time}
-        👩 {master}
-        Услуги:
-        {services}
-        """
+    {nme}, ваша запись изменена:
+    ⌚️ {day_month} в {start_time}
+    👩 {master}
+    Услуги:
+    {services}
+    """
     result_5 = verify_text(test_text_5, valid_keys)
     assert result_5 == "Ошибка: Некорректный ключ 'nme'", f"Failed Test 5: {result_5}"
 
